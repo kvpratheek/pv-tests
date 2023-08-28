@@ -1,0 +1,10 @@
+{
+    "appName": "pv-spa-reuse-provider", 
+    "xsappname": "pvspareuseprovider", 
+    "displayName": "SPA Reuse Test from PV",
+    "description": "SPA Reuse Test from PV",
+    "appUrls":{
+          "getDependencies": "https://pv-spa-reuse-provider.cfapps.sap.hana.ondemand.com/callback/v1.0/dependencies?dependentAppId={dependentServiceInstanceAppId}",
+          "onSubscription": "https://pv-spa-reuse-provider.cfapps.sap.hana.ondemand.com/callback/v1.0/tenants/{tenantId}"  
+          }
+}

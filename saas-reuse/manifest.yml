@@ -1,0 +1,14 @@
+applications:
+- name: pv-spa-reuse-provider
+  path: ./target/tenant-mgt-0.0.1-SNAPSHOT.war
+  memory: 1024m
+  buildpack: java_buildpack
+  route: pv-spa-reuse-tntmgmt.internal.cfapps.sap.hana.ondemand.com
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{ enabled: false }'
+    APPROUTER_DOMAIN: "pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
+    SAP_JWT_TRUST_ACL: '[{ "clientid": "*", "identityzone": "*" }]'
+
+  services:
+   - xsuaa-broker
+   - saas-registry-pv
