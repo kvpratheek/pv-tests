@@ -8,8 +8,8 @@ applications:
     XS_APP_LOG_LEVEL: debug
     TENANT_HOST_PATTERN: ^(.*)-pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
     APPROUTER_DOMAIN: "pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
-    APPLICATION_DOMAIN: "-${approuter-host}.internal.${default-domain}"
-    SAP_JWT_TRUST_ACL: '[{ "clientid": "*", "identityzone": "sap-provisioning" }]'
+    APPLICATION_DOMAIN: "-pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
+    SAP_JWT_TRUST_ACL: '[{ "clientid": "*", "identityzone": "*" }]'
 
   services:
    - xsuaa-broker
