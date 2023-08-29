@@ -65,7 +65,7 @@ public class TenantManagement {
     @PutMapping("/tenants/{tenantId}")
     @ResponseStatus(HttpStatus.OK)
     public String putTenant(@PathVariable String tenantId, @RequestBody SubscriptionPayload payload) {
-        return String.format("https://%s%s", payload.subscribedSubdomain, approuterURLSuffix);
+        return String.format("https://%s.%s", payload.subscribedSubdomain, approuterURLSuffix);
     }
 
     @DeleteMapping("/tenants/{tenantId}")
