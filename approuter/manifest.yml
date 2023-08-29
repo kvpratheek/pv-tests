@@ -1,0 +1,19 @@
+applications:
+- name: pv-spa-reuse-router
+  host: pv-spa-reuse-router
+  path: ./
+  memory: 256m
+  buildpack: nodejs_buildpack
+  env:
+    XS_APP_LOG_LEVEL: debug
+    TENANT_HOST_PATTERN: ^(.*)-pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
+    APPROUTER_DOMAIN: "pv-spa-reuse-router.internal.cfapps.sap.hana.ondemand.com"
+    APPLICATION_DOMAIN: "-${approuter-host}.internal.${default-domain}"
+    SAP_JWT_TRUST_ACL: '[{ "clientid": "*", "identityzone": "sap-provisioning" }]'
+
+  services:
+   - xsuaa-broker
+   - saas-registry-pv
+   - portal
+   - spa-reuse
+   - html5appsrepo-appruntime
